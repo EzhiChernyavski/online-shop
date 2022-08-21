@@ -1,0 +1,55 @@
+header {
+    padding: 25px 0;
+    margin-bottom: 80px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 0.0625em 0.5em rgba(0, 0, 0, 0.3);
+    z-index: 99999;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    gap: 1.5em;
+}
+
+.link {
+    color: inherit;
+    padding: 7px 10px;
+    text-decoration: none;
+    line-height: 1em;
+}
+
+
+.active {
+    background-color: #000;
+    border-radius: 999em;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    line-height: 1em;
+}
+
+.cart {
+    display: flex;
+    width: 50%;
+
+}
+
+.cartImg {
+    margin-right: 5px;
+    width: 20px;
+}
+
+.price {
+    margin-left: 25px;
+}

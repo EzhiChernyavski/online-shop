@@ -1,0 +1,62 @@
+section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+}
+
+.wrapper {
+    position: relative;
+    width: 330px;
+    height: 350px;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.wrapper:hover {
+    box-shadow: 6px 6px 35px rgba(168, 172, 176, 0.19)
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.buttonWrapper {
+    position: absolute;
+    opacity: 0%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    bottom: 25px;
+    right: 25px;
+    transition: all 0.2s ease-out;
+    transform-origin: 50% 50% 0;
+    cursor: pointer;
+}
+
+.wrapper:hover > .buttonWrapper {
+    width: 40px;
+    height: 40px;
+    opacity: 100%;
+}
+
+.cart {
+    width: 70%;
+    height: 70%;
+}
