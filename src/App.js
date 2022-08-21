@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { AboutShop, Home, NotFound, ProductPage } from "./Pages";
+import { AboutShopPage, Home, NotFound, ProductPage } from "./Pages";
 import Layout from "./Components/Layout/Layout";
 import { AppProvider } from "./hoc/AppContext";
 
@@ -15,7 +15,7 @@ function App () {
             <Route index
                    element={<Home />} />
             <Route path='/aboutShop'
-                   element={<AboutShop />} />
+                   element={<AboutShopPage />} />
             <Route path='/product/:id'
                    element={<ProductPage />} />
             <Route path='*'

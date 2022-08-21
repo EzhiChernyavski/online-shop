@@ -1,6 +1,6 @@
 header {
     padding: 25px 0;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
     position: sticky;
     top: 0;
     background-color: white;
@@ -17,8 +17,8 @@ header {
 
 nav {
     display: flex;
-    width: 50%;
-    margin: 0 auto;
+    justify-content: flex-end;
+    width: 60%;
     gap: 1.5em;
 }
 
@@ -41,7 +41,8 @@ nav {
 
 .cart {
     display: flex;
-    width: 50%;
+    width: 40%;
+    justify-content: flex-end;
 
 }
 
