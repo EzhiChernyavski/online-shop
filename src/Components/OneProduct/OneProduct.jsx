@@ -34,6 +34,7 @@ const OneProduct = ({ product }) => {
             />
           </div>
           <input
+            className={style.countProduct}
             type='number'
             value={countOfProduct}
             onChange={handleCount}

@@ -4,14 +4,20 @@ import { AppContext } from "../../hoc/AppContext";
 import style from './AddCartButton.module.css';
 
 export const AddCartButton = ({ price, countOfProduct, setCountOfProduct }) => {
-  const { setAllPrice } = useContext(AppContext);
+  const { setAllPrice, isLogin, setIsShowPopUp, currentUser } = useContext(AppContext);
 
   const handlePrice = () => {
-    setAllPrice(price, countOfProduct)
-    if (countOfProduct) {
-      setCountOfProduct(``)
+
+    if(isLogin) {
+      setAllPrice(price, countOfProduct, currentUser)
+      if (countOfProduct) {
+        setCountOfProduct(``)
+      }
+    } else {
+      setIsShowPopUp(true)
     }
   }
+
   return (
     <button
       className={style.addCart}

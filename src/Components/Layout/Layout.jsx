@@ -1,13 +1,21 @@
 import { NavLink } from "react-router-dom";
 import { Outlet } from 'react-router';
 import style from './Layout.module.css';
-import { AppContext } from "../../hoc/AppContext";
+import { Cart } from "../Cart/Cart";
 import { useContext } from "react";
-import cartImg from '../../Icons/EmptyCart.svg'
+import { AppContext } from "../../hoc/AppContext";
+import { LoginButton } from "../LoginButton/LoginButton";
+import { LoginForm } from "../LoginForm/LoginForm";
 
 const Layout = () => {
+  const { isLogin, isShowPopUp, setIsShowPopUp } = useContext(AppContext);
 
-  const { price, countOfProducts } = useContext(AppContext);
+  const handlePopUp = (event) => {
+    event.preventDefault();
+    if (!isShowPopUp) {
+      setIsShowPopUp(true);
+    }
+  }
 
   return (
     <>
@@ -24,18 +32,12 @@ const Layout = () => {
               to={'/aboutShop'}
             >About shop</NavLink>
           </nav>
-          <div className={style.cart}>
-            <img
-              className={style.cartImg}
-              src={cartImg}
-              alt='cartImg'
-            />
-            <p>{countOfProducts}</p>
-            <p className={style.price}>${price}</p>
-          </div>
+          {isLogin ? <Cart /> : <LoginButton handleClick={handlePopUp}>Login</LoginButton>}
+
         </div>
+        {isShowPopUp && <LoginForm />}
       </header>
-      <div className={style.container}>
+      <div>
         <Outlet />
       </div>
     </>

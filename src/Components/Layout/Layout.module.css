@@ -8,13 +8,6 @@ header {
     z-index: 99999;
 }
 
-.wrapper {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-}
-
 nav {
     display: flex;
     justify-content: flex-end;
@@ -22,11 +15,20 @@ nav {
     gap: 1.5em;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+}
+
 .link {
     color: inherit;
     padding: 7px 10px;
     text-decoration: none;
-    line-height: 1em;
+    line-height: 1.2em;
 }
 
 
@@ -34,23 +36,9 @@ nav {
     background-color: #000;
     border-radius: 999em;
     color: #fff;
-    padding: 5px 10px;
+    padding: 7px 10px;
     text-decoration: none;
     line-height: 1em;
 }
 
-.cart {
-    display: flex;
-    width: 40%;
-    justify-content: flex-end;
 
-}
-
-.cartImg {
-    margin-right: 5px;
-    width: 20px;
-}
-
-.price {
-    margin-left: 25px;
-}
