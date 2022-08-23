@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 export const Error = ({ error }) => {
   let timerId = null;
   const [isError, setIsError] = useState(true);
-  console.log(error)
 
   const closeErrorPopUp = () => {
     if(isError) {
