@@ -5,21 +5,32 @@ import Layout from "./Components/Layout/Layout";
 import { AppProvider } from "./hoc/AppContext";
 
 
-function App () {
+function App() {
   return (
     <AppProvider>
       <div className="App">
         <Routes>
-          <Route path='/'
-                 element={<Layout />}>
-            <Route index
-                   element={<Home />} />
-            <Route path='/aboutShop'
-                   element={<AboutShopPage />} />
-            <Route path='/product/:id'
-                   element={<ProductPage />} />
-            <Route path='*'
-                   element={<NotFound />} />
+          <Route
+            path='/'
+            element={<Layout />}
+          >
+            <Route
+              index
+              element={<Home />}
+            />
+            <Route
+              path='/aboutShop'
+              element={<AboutShopPage />}
+            />
+            <Route
+              path='/product/:id'
+              element={<ProductPage />}
+            />
+            <Route
+              path='*'
+              element={<NotFound />}
+            />
+
           </Route>
         </Routes>
       </div>

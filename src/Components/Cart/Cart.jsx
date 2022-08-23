@@ -5,7 +5,8 @@ import { AppContext } from "../../hoc/AppContext";
 import { LoginButton } from "../LoginButton/LoginButton";
 
 export const Cart = () => {
-  //const { users, countOfProducts, isLogin, setIsLogin, currentUser } = useContext(AppContext);
+  let price = 0;
+  let count = 0;
   const { users, isLogin, setIsLogin, currentUser } = useContext(AppContext);
 
   const handleOut = (event) => {
@@ -14,10 +15,6 @@ export const Cart = () => {
       setIsLogin(false)
     }
   }
-
-  let price = 0;
-  let count = 0;
-
 
   users.map(user => {
     if (user.name === currentUser) {

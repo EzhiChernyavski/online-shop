@@ -9,9 +9,15 @@ export const useFetch = (url) => {
   useEffect (() => {
     setLoading (true);
     fetch (url)
+      .then((res) => {
+        if (res.status !== 200) {
+          return Promise.reject(new Error(res.statusText))
+        }
+        return Promise.resolve(res)
+      })
       .then((res) => res.json())
       .then((data) => setData(data))
-      .catch((e) => setError(`An error has occurred!`))
+      .catch((e) => setError(`${e}`))
       .finally(() => setLoading(false));
   }, [url])
 

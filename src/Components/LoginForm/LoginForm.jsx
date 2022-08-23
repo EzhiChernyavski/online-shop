@@ -12,7 +12,7 @@ export const LoginForm = () => {
     name: '',
     password: '',
   })
-  const [isFormValid, setValidFrom] = useState(false)
+  const [isFormValid, setValidFrom] = useState(true);
 
   const handleReset = (event) => {
     event.preventDefault()
@@ -36,17 +36,15 @@ export const LoginForm = () => {
         setCurrentUser(user.name)
         setIsLogin(true);
         setIsShowPopUp(false);
-        setValidFrom(false)
       } else {
-        setValidFrom(true)
+        setValidFrom(false)
       }
     })
   }
 
-
   return (
     <div className={style.formWrapper}>
-      <h2 className={style.formTitle}>Enter your details</h2>
+      <h3 className={style.formTitle}>To add item to the cart, log in</h3>
       <form
         onSubmit={handleSubmit}
         method='post'
@@ -69,7 +67,7 @@ export const LoginForm = () => {
           value={state.password}
           onChange={handleInput}
         />
-        {isFormValid && <div style={{ color: 'red' }}>The name or password is incorrect</div>}
+        {isFormValid || <div style={{ color: 'red' }}>The name or password is incorrect</div>}
         <div className={style.buttonWrapper}>
           <LoginButton handleClick={handleSubmit}>Enter</LoginButton>
           <LoginButton handleClick={handleReset}>Cancel</LoginButton>
