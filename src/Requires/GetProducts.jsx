@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFetch } from "../Hooks/useFetch";
 import Products from "../Components/Products/Products";
 import { Error } from "../Components/Error/Error";
@@ -10,13 +10,11 @@ export const GetProducts = () => {
     loading
   } = useFetch(`https://api.escuelajs.co/api/v1/products?offset=0&limit=50`);
 
-
-
   if (loading) {
     return <h1>Loading...</h1>
   }
 
-  if (error !== '') {
+  if (!!error) {
     return <Error error={error} />
   }
 

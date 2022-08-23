@@ -12,7 +12,7 @@ export const GetOneProduct = () => {
     return <h1>Loading...</h1>
   }
 
-  if (error !== '') {
+  if (!!error) {
     return <Error error={error} />
   }
 

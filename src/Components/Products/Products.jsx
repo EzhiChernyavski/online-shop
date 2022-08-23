@@ -6,7 +6,7 @@ import { AddCartButton } from "../AddCartButton/AddCartButton";
 const Products = ({ data }) => {
   return (
     <div className={style.wrapper} key={data.id} >
-      <img src={data.images[0]} alt={data.title}/>
+      <img src={data.images} alt={data.title}/>
       <Link to={`/product/${data.id}`}>
         <h2 className={style.title}>{data.title}</h2>
       </Link>
