@@ -3,6 +3,7 @@ import style from './LoginForm.module.css'
 import { LoginButton } from "../LoginButton/LoginButton";
 import { AppContext } from "../../hoc/AppContext";
 import close from '../../Icons/close.svg';
+import { useNavigate } from 'react-router-dom';
 
 
 export const LoginForm = () => {
@@ -13,6 +14,7 @@ export const LoginForm = () => {
     password: '',
   })
   const [isFormValid, setValidFrom] = useState(true);
+  const navigate = useNavigate();
 
   const handleReset = (event) => {
     event.preventDefault()
@@ -36,6 +38,7 @@ export const LoginForm = () => {
         setCurrentUser(user.name)
         setIsLogin(true);
         setIsShowPopUp(false);
+        navigate(`/`);
       } else {
         setValidFrom(false)
       }
