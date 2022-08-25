@@ -8,17 +8,12 @@ a {
     text-decoration: none;
 }
 
-img {
-    display: block;
-    margin: 0 auto;
-    height: auto;
-    width: 100%;
-}
-
 .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     position: relative;
     width: 330px;
-    height: 350px;
     padding: 15px;
     margin: 20px 0;
     border: 1px solid #efefef;
@@ -28,6 +23,25 @@ img {
 
 .wrapper:hover {
     box-shadow: 6px 6px 35px rgba(168, 172, 176, 0.19)
+}
+
+.imgWrapper {
+    display: flex;
+    height: 70%;
+}
+
+.img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.contentWrapper {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
 }
 
 .title {

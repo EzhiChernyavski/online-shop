@@ -6,7 +6,7 @@ import { Error } from "../Components/Error/Error";
 
 export const GetOneProduct = () => {
   const { id } = useParams();
-  const { data, error, loading } = useFetch(`https://api.escuelajs.co/api/v1/products/${id}`);
+  const { data, error, loading } = useFetch(`https://fakestoreapi.com/products/${id}`);
 
   if (loading) {
     return <h1>Loading...</h1>

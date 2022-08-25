@@ -8,7 +8,8 @@ export const GetProducts = () => {
     data,
     error,
     loading
-  } = useFetch(`https://api.escuelajs.co/api/v1/products?offset=0&limit=50`);
+  } = useFetch(`https://fakestoreapi.com/products?limit=50`);
+
 
   if (loading) {
     return <h1>Loading...</h1>

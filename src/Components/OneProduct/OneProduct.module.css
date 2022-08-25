@@ -1,29 +1,18 @@
-.countProduct[type="number"] {
-    background-color: #eee;
-    vertical-align: top;
-    outline: none;
-    padding: 0;
-    height: 40px;
-    line-height: 40px;
-    text-indent: 10px;
-    display: inline-block;
-    width: 15%;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    font-size: 18px;
-    border-radius: 3px;
-}
-
-.countProduct[type="number"]:focus {
-    outline: 2px solid #000000;
-}
-
 .wrapper {
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     gap: 20px;
+}
+
+.imgColumn {
+    width: 50%;
+}
+
+.img {
+    width: auto;
+    height: 40%;
 }
 
 .textColumn {
@@ -50,6 +39,26 @@
 .cart {
     width: 70%;
     height: 70%;
+}
+
+.countProduct[type="number"] {
+    background-color: #eee;
+    vertical-align: top;
+    outline: none;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    display: inline-block;
+    width: 15%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+.countProduct[type="number"]:focus {
+    outline: 2px solid #000000;
 }
 
 

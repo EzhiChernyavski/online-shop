@@ -15,9 +15,10 @@ const OneProduct = ({ product }) => {
 
   return (
     <div className={style.wrapper}>
-      <div>
+      <div className={style.imgColumn}>
         <img
-          src={product.images}
+          className={style.img}
+          src={product.image}
           alt={product.title}
         />
       </div>
