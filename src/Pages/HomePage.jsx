@@ -1,9 +1,7 @@
-import { GetProducts } from "../Requires/GetProducts";
+import Products from "../Components/Products/Products";
 
-export const Home = () => {
+export const HomePage = () => {
   return (
-    <>
-      <GetProducts />
-    </>
+    <Products />
   );
 };

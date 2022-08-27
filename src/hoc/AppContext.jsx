@@ -2,31 +2,28 @@ import { createContext, useState } from 'react';
 
 export const AppContext = createContext(null);
 
-const listOfUsers = [
-  { name: 'user', password: '1234user', count: 0, price: 0 },
-  { name: 'Ipolit', password: 'password', count: 0, price: 0 },
-]
+const listOfUsers = { name: 'user', password: '1234user' };
 
 export const AppProvider = ({ children }) => {
 
   const [isLogin, setIsLogin] = useState(false);
+  const [price, setPrice] = useState(0);
+  const [countOfProduct, setCountOfProduct] = useState(0);
   const [isShowPopUp, setIsShowPopUp] = useState(false);
-  const [users, setUser] = useState(listOfUsers);
-  const [currentUser, setCurrentUser] = useState(``);
-
-
+  const [user] = useState(listOfUsers);
 
   return (
     <AppContext.Provider
       value={{
         isLogin,
         setIsLogin,
+        price,
+        setPrice,
+        countOfProduct,
+        setCountOfProduct,
         isShowPopUp,
         setIsShowPopUp,
-        users,
-        setUser,
-        currentUser,
-        setCurrentUser,
+        user,
       }}
     >{children}</AppContext.Provider>
   )

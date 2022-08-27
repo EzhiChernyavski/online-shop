@@ -11,7 +11,7 @@ a {
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative;
     width: 330px;
     padding: 15px;
@@ -27,7 +27,9 @@ a {
 
 .imgWrapper {
     display: flex;
-    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .img {
@@ -37,7 +39,6 @@ a {
 }
 
 .contentWrapper {
-    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -64,7 +65,7 @@ a {
     cursor: pointer;
 }
 
-.wrapper:hover > .buttonWrapper {
+.wrapper:hover .contentWrapper  .buttonWrapper {
     width: 40px;
     height: 40px;
     opacity: 100%;

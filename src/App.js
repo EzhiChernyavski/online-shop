@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { AboutShopPage, Home, NotFound, ProductPage } from "./Pages";
+import { AboutShopPage, HomePage, NotFound, ProductPage } from "./Pages";
 import Layout from "./Components/Layout/Layout";
 import { AppProvider } from "./hoc/AppContext";
 
@@ -16,7 +16,7 @@ function App() {
           >
             <Route
               index
-              element={<Home />}
+              element={<HomePage />}
             />
             <Route
               path='/aboutShop'

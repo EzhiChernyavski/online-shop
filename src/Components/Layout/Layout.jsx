@@ -22,7 +22,7 @@ const Layout = () => {
       <header>
         <div className={style.wrapper}>
           <nav>
-            {/*разобраться с передачей стилей линкам*/}
+            {/*TODO: разобраться с передачей стилей линкам*/}
             <NavLink
               className={(el) => el.isActive ? style.active : style.link}
               to={'/'}

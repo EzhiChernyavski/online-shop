@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
 
-  const { isShowPopUp, setIsShowPopUp, setIsLogin, users, setCurrentUser } = useContext(AppContext);
+  const { isShowPopUp, setIsShowPopUp, setIsLogin, user } = useContext(AppContext);
   const [state, setState] = useState({
     name: '',
     password: '',
@@ -16,7 +16,7 @@ export const LoginForm = () => {
   const [isFormValid, setValidFrom] = useState(true);
   const navigate = useNavigate();
 
-  const handleReset = (event) => {
+  const handleClosePopUp = (event) => {
     event.preventDefault()
     if (isShowPopUp) {
       setIsShowPopUp(false);
@@ -33,16 +33,15 @@ export const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    users.map(user => {
-      if (user.name === state.name && user.password === state.password) {
-        setCurrentUser(user.name)
-        setIsLogin(true);
-        setIsShowPopUp(false);
-        navigate(`/`);
-      } else {
-        setValidFrom(false)
-      }
-    })
+    // setCurrentUser(user.name)
+    if (user.name === state.name && user.password === state.password) {
+      setIsLogin(true);
+      setIsShowPopUp(false);
+      navigate(`/`);
+      setValidFrom(false);
+    } else {
+      setValidFrom(false)
+    }
   }
 
   return (
@@ -73,10 +72,10 @@ export const LoginForm = () => {
         {isFormValid || <div style={{ color: 'red' }}>The name or password is incorrect</div>}
         <div className={style.buttonWrapper}>
           <LoginButton handleClick={handleSubmit}>Enter</LoginButton>
-          <LoginButton handleClick={handleReset}>Cancel</LoginButton>
+          <LoginButton handleClick={handleClosePopUp}>Cancel</LoginButton>
         </div>
         <img
-          onClick={handleReset}
+          onClick={handleClosePopUp}
           className={style.close}
           src={close}
           alt='close'

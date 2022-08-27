@@ -1,9 +1,7 @@
-import { GetOneProduct } from "../Requires/GetOneProduct";
+import OneProduct from '../Components/OneProduct/OneProduct';
 
 export const ProductPage = () => {
   return (
-    <>
-      <GetOneProduct />
-    </>
+    <OneProduct />
   );
 };

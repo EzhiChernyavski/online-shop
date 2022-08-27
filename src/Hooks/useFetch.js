@@ -5,7 +5,6 @@ export const useFetch = (url) => {
   const [error, setError] = useState ('');
   const [loading, setLoading] = useState (false);
 
-
   useEffect (() => {
     setLoading (true);
     fetch (url)
