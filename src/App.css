@@ -7,6 +7,10 @@ section {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
   padding-bottom: 80px;

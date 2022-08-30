@@ -1,0 +1,43 @@
+header {
+    padding: 25px 0;
+    margin-bottom: 50px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 0.0625em 0.5em rgba(0, 0, 0, 0.3);
+    z-index: 99999;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    gap: 1.5em;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.link {
+    color: inherit;
+    padding: 7px 10px;
+    line-height: 1.2em;
+}
+
+
+.active {
+    background-color: #000;
+    border-radius: 999em;
+    color: #fff;
+    padding: 7px 10px;
+    text-decoration: none;
+    line-height: 1em;
+}
+
+

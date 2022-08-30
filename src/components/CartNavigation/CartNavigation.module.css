@@ -1,0 +1,39 @@
+.cart {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    justify-content: flex-end;
+}
+
+.cart a > p {
+    margin: 5px;
+}
+
+.cartLink {
+    display: flex;
+}
+
+.cartImg {
+    margin-right: 5px;
+    width: 20px;
+}
+
+.price {
+    margin: 0 30px 0 15px;
+}
+
+.link {
+    display: flex;
+    color: inherit;
+    padding: 7px 10px;
+    line-height: 1.2em;
+}
+
+.active {
+    display: flex;
+    border-radius: 999em;
+    border: 2px solid #000000;
+    padding: 7px 10px;
+    text-decoration: none;
+    line-height: 1em;
+}
