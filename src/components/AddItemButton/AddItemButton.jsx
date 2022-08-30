@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../../hoc/AppContext";
+import { PopUpContext } from "../../hoc/PopUpContext";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, incrementQuantity } from "../../store/reducers/cartReducer";
 import { cartSelector } from "../../store/selectors/cartSelector";
@@ -12,7 +12,7 @@ export const AddItemButton = ({
   children,
   className
 }) => {
-  const { setIsShowPopUp } = useContext(AppContext);
+  const { setIsShowPopUp } = useContext(PopUpContext);
   const dispatch = useDispatch();
   const cart = useSelector(cartSelector);
   const user = useSelector(userSelector);

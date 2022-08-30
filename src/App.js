@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { AboutShopPage, HomePage, NotFound, ProductPage, CartPage } from "./pages";
 import Layout from "./components/Layout/Layout";
-import { AppProvider } from "./hoc/AppContext";
+import { AppProvider } from "./hoc/PopUpContext";
 
 
 function App() {

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import style from './LoginForm.module.css'
 import { LoginButton } from "../LoginButton/LoginButton";
-import { AppContext } from "../../hoc/AppContext";
+import { PopUpContext } from "../../hoc/PopUpContext";
 import close from '../../icons/close.svg';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +11,7 @@ import { changeLogin } from "../../store/reducers/userReducer";
 
 export const LoginForm = () => {
 
-  const { isShowPopUp, setIsShowPopUp } = useContext(AppContext);
+  const { isShowPopUp, setIsShowPopUp } = useContext(PopUpContext);
   const [currentUser, setCurrentUser] = useState({
     name: '',
     password: '',

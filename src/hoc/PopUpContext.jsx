@@ -1,16 +1,16 @@
 import { createContext, useState } from 'react';
 
-export const AppContext = createContext(null);
+export const PopUpContext = createContext(null);
 
 export const AppProvider = ({ children }) => {
   const [isShowPopUp, setIsShowPopUp] = useState(false);
 
   return (
-    <AppContext.Provider
+    <PopUpContext.Provider
       value={{
         isShowPopUp,
         setIsShowPopUp,
       }}
-    >{children}</AppContext.Provider>
+    >{children}</PopUpContext.Provider>
   )
 }

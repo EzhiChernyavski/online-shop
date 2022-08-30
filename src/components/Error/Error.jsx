@@ -8,7 +8,7 @@ export const Error = ({ error }) => {
   const [isError, setIsError] = useState(true);
 
   const closeErrorPopUp = () => {
-    if(isError) {
+    if (isError) {
       setIsError(false)
     }
   }
