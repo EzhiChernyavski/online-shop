@@ -30,6 +30,7 @@ const cartReducer = createSlice({
     decrementQuantity: (state, action) => {
       const product = state.products.find((item) => item.id === action.payload.id);
       product.quantity === 1 ? product.quantity = 1 : product.quantity--;
+      product.allPrice = (product.price * product.quantity).toFixed(1);
     },
 
     removeItem: (state, action) => {
