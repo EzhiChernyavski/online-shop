@@ -1,34 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./Products.module.css";
 import { Link } from "react-router-dom";
-import { AddItemButton } from "../AddItemButton/AddItemButton";
-import { useFetch } from "../../hooks/useFetch";
-import { Error } from "../Error/Error";
+import { IncrementItemButton } from "../IncrementItemButton/IncrementItemButton";
 import cartImgWhite from "../../icons/EmptyCart-white.svg";
 
-const Products = () => {
-  const [countItem, setCountItem] = useState(10);
-  const {
-    data,
-    error,
-    loading
-  } = useFetch(`https://fakestoreapi.com/products?limit=${countItem}`);
-
-  const addMoreProduct = () => {
-    setCountItem(countItem + 5)
-  }
-
-  if (loading) {
-    return <h1>Loading...</h1>
-
-  }
-  if (!!error) {
-    return <Error error={error} />
-
-  }
-
-  //------------------------------------
-
+const Products = ({ data, addMoreProduct, countItem }) => {
   return (
     <section>
       <div className={style.productsWrapper}>
@@ -50,7 +26,7 @@ const Products = () => {
               </Link>
               <p>${product.price}</p>
               <div className={style.buttonWrapper}>
-                <AddItemButton
+                <IncrementItemButton
                   className={style.addButton}
                   product={product}
                 >
@@ -59,7 +35,7 @@ const Products = () => {
                     alt='cartImgWhite'
                     className={style.cart}
                   />
-                </AddItemButton>
+                </IncrementItemButton>
               </div>
             </div>
           </div>

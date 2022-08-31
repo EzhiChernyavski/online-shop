@@ -1,8 +1,10 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { AboutShopPage, HomePage, NotFound, ProductPage, CartPage } from "./pages";
+import { AboutShopPage, HomePage, NotFound, ProductPage } from "./pages";
+import CartPage from './components/Cart/Cart'
 import Layout from "./components/Layout/Layout";
 import { AppProvider } from "./hoc/PopUpContext";
+import { RequireAuth } from "./hoc/RequireAuth";
 
 
 function App() {
@@ -22,9 +24,12 @@ function App() {
               path='/aboutShop'
               element={<AboutShopPage />}
             /><Route
-              path='/cart'
-              element={<CartPage />}
-            />
+            path='/cart'
+            element={
+              <RequireAuth>
+                <CartPage />
+              </RequireAuth>}
+          />
             <Route
               path='/product/:id'
               element={<ProductPage />}

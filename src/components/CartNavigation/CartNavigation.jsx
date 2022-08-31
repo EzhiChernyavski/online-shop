@@ -2,19 +2,16 @@ import React from 'react';
 import style from ".//CartNavigation.module.css";
 import cartImg from "../../icons/EmptyCart.svg";
 import { LoginButton } from "../LoginButton/LoginButton";
-import { NavLink, useNavigate } from 'react-router-dom';
-import { GetTotalQuantity } from "../../features/GetTotalQuantity";
-import { GetTotalPrice } from "../../features/GetTotalPrice";
-import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useNavigate } from 'react-router-dom';import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../../store/selectors/userSelector";
 import { changeLogin } from "../../store/reducers/userReducer";
+import { cartSelector, getTotalSelector } from "../../store/selectors/cartSelector";
 
 export const CartNavigation = () => {
   const navigate = useNavigate();
-  const totalQuantity = GetTotalQuantity();
-  const totalPrice = GetTotalPrice();
   const user = useSelector(userSelector);
   const dispatch = useDispatch();
+  const {totalQuantity, totalPrice} = getTotalSelector(useSelector(cartSelector));
 
   const handleOut = (event) => {
     event.preventDefault();

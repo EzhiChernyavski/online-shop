@@ -1,7 +1,8 @@
 table {
     width: 100%;
     border: none;
-    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #000000;
 }
 table thead th {
     font-weight: bold;
@@ -53,6 +54,7 @@ span {
 .button {
     width: 80px;
     height: 30px;
+    margin: 0 10px;
     border-radius: 15px;
     background-color: white;
     transition: all 0.2s ease-out;
@@ -75,6 +77,7 @@ span {
 
 .underTableButtons {
     display: flex;
-    width: 170px;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 15px;
 }

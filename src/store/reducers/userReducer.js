@@ -9,7 +9,7 @@ const userReducer = createSlice({
   },
   reducers: {
     changeLogin: (state) => {
-      !state.isLogin ? state.isLogin = true : state.isLogin = false;
+      state.isLogin = !state.isLogin;
     }
   }
 })

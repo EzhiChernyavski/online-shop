@@ -5,7 +5,7 @@ import { addToCart, incrementQuantity } from "../../store/reducers/cartReducer";
 import { cartSelector } from "../../store/selectors/cartSelector";
 import { userSelector } from "../../store/selectors/userSelector";
 
-export const AddItemButton = ({
+export const IncrementItemButton = ({
   currentCountOfProduct,
   setCurrentCountOfProduct,
   product,
@@ -20,24 +20,19 @@ export const AddItemButton = ({
 
   const handleAddItem = () => {
     if (user.isLogin) {
+      const isProduct = cart.products.some((item) => item.id === product.id);
 
-      //Checking the product in the cart
-      const quantity = cart.products.some((item) => item.id === product.id);
-      //-------
-
-      //Dispatches depend on currentCountOfProduct & quantity
-      if (!currentCountOfProduct) {
-        quantity ? dispatch(incrementQuantity(product)) : dispatch(addToCart(product));
+      if (isProduct) {
+        dispatch(incrementQuantity({
+          ...product,
+          currentCountOfProduct
+        }))
       } else {
-        quantity ? (
-          dispatch(incrementQuantity({
-            product,
-            currentCountOfProduct
-          }))) : (
-          dispatch(addToCart({ product, currentCountOfProduct }))
-        );
+        dispatch(addToCart({
+          ...product,
+          currentCountOfProduct
+        }));
       }
-      //----------
 
       if (currentCountOfProduct) {
         setCurrentCountOfProduct(``);

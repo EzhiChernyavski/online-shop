@@ -1,22 +1,19 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cartSelector } from "../../store/selectors/cartSelector";
+import { cartSelector, getTotalSelector } from "../../store/selectors/cartSelector";
 import style from './Cart.module.css'
-import { AddItemButton } from "../AddItemButton/AddItemButton";
-import RemoveItemButton from "../RemoveItemButton/RemoveItemButton";
-import { GetTotalPrice } from "../../features/GetTotalPrice";
 import { removeAllItems } from "../../store/reducers/cartReducer";
+import ItemInCartTable from "../ItemInCartTable/ItemInCartTable";
 
 
 const Cart = () => {
   const cart = useSelector(cartSelector);
-  const totalPrice = GetTotalPrice();
   const dispatch = useDispatch();
+  const { totalPrice } = getTotalSelector(useSelector(cartSelector));
 
   const handleClearCart = () => {
     dispatch(removeAllItems())
   }
-
 
   return (
     <div className={style.cartWrapper}>
@@ -34,43 +31,11 @@ const Cart = () => {
               <th>Remove</th>
             </tr>
             </thead>
-            <tbody>
-            {cart.products.map(product => {
-              return (
-                <tr
-                  className={style.wrapper}
-                  key={product.id}
-                >
-                  <td>{product.id}</td>
-                  <td>{product.title}</td>
-                  <td>${product.price}</td>
-                  <td className={style.addItemCell}>
-                  <span>
-                    {product.quantity}
-                  </span>
-                    <AddItemButton
-                      className={style.button}
-                      product={product}
-                    >Add</AddItemButton>
-                  </td>
-                  <td>${product.allPrice}</td>
-                  <td>
-                    <RemoveItemButton
-                      className={style.button}
-                      product={product}
-                    >Remove</RemoveItemButton>
-                  </td>
-                </tr>
-              )
-            })}
-            <tr>
-              <td
-                colSpan='5'
-                style={{ textAlign: 'right', paddingRight: '25px' }}
-              >${totalPrice}</td>
-            </tr>
-            </tbody>
+            <ItemInCartTable cart={cart} />
           </table>
+          <div style={{ textAlign: 'right', marginRight: '25px', marginTop: '10px' }}>
+            Total price: ${totalPrice}
+          </div>
           <div className={style.underTableButtons}>
             <button
               className={style.button}
