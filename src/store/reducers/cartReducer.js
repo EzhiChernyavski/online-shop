@@ -12,8 +12,8 @@ const cartReducer = createSlice({
         title: payload.title,
         price: payload.price,
         quantity: payload.currentCountOfProduct ? Number(payload.currentCountOfProduct) : 1,
-        allPrice: (payload.price * Number(payload.currentCountOfProduct))
-          .toFixed(1),
+        allPrice: (payload.price * (payload.currentCountOfProduct ? Number(payload.currentCountOfProduct) : 1))
+          .toFixed(2),
       })
     },
 
